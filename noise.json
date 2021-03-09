@@ -1,0 +1,16 @@
+{
+    "name": "datagen-noise-sensor",
+    "config" : {
+        "connector.class": "io.confluent.kafka.connect.datagen.DatagenConnector",
+        "kafka.topic" : "noise-sensor",
+        "schema.filename": "/dataten/noise.avsc",
+        "schema.keyfield" : "sensor",
+        "key.converter" : "org.apache.kafka.connect.storage.StringConverter",
+        "value.converter": "io.confluent.connect.avro.AvroConverter",
+        "value.converter.schema.registry.url" : "http://schema-registry:8001",
+        "value.converter.enhanced.avro.schema.support" : true,
+        "max.internal": 5000,
+        "interations" : 1000000000,
+        "tasks.max":1
+    }
+}
